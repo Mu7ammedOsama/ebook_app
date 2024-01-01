@@ -1,19 +1,19 @@
 import 'package:ebook_app/features/home/domain/entities/book_entity.dart';
 
-abstract class FeaturedBookState {}
+abstract class FeaturedBooksState {}
 
-class FeaturedBookInitial extends FeaturedBookState {}
+class FeaturedBooksInitial extends FeaturedBooksState {}
 
-class FeaturedBookLoading extends FeaturedBookState {}
+class FeaturedBooksLoading extends FeaturedBooksState {}
 
-class FeaturedBookSuccess extends FeaturedBookState {
+class FeaturedBooksSuccess extends FeaturedBooksState {
   final List<BookEntity> books;
 
-  FeaturedBookSuccess(this.books);
+  FeaturedBooksSuccess(this.books);
 }
 
-class FeaturedBookFailure extends FeaturedBookState {
+class FeaturedBooksFailure extends FeaturedBooksState {
   final String errorMessage;
 
-  FeaturedBookFailure(this.errorMessage);
+  FeaturedBooksFailure(this.errorMessage);
 }

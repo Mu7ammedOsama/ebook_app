@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ebook_app/features/home/domain/use_cases/fetch_newest_books_use_case.dart';
 import 'package:ebook_app/features/home/presentation/manager/newest_books_cubit/newest_books_state.dart';
 

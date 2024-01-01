@@ -1,20 +1,20 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ebook_app/features/home/domain/use_cases/fetch_featured_books_use_case.dart';
 import 'package:ebook_app/features/home/presentation/manager/featured_books_cubit/featured_books_state.dart';
 
-class FeaturedBookCubit extends Cubit<FeaturedBookState> {
-  FeaturedBookCubit(this.featuredBooksUseCase) : super(FeaturedBookInitial());
+class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
+  FeaturedBooksCubit(this.fetchFeaturedBooksUseCase) : super(FeaturedBooksInitial());
 
-  final FetchFeaturedBooksUseCase featuredBooksUseCase;
+  final FetchFeaturedBooksUseCase fetchFeaturedBooksUseCase;
 
   Future<void> fetchFeaturedBooks() async {
-    emit(FeaturedBookLoading());
+    emit(FeaturedBooksLoading());
 
-    var response = await featuredBooksUseCase.call();
+    var response = await fetchFeaturedBooksUseCase.call();
 
     response.fold(
-      (failure) => emit(FeaturedBookFailure(failure.errorMessage)),
-      (books) => emit(FeaturedBookSuccess(books)),
+      (failure) => emit(FeaturedBooksFailure(failure.errorMessage)),
+      (books) => emit(FeaturedBooksSuccess(books)),
     );
   }
 }
