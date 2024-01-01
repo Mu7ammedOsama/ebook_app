@@ -1,4 +1,4 @@
-import 'package:ebook_app/core/utilities/assets_data.dart';
+import 'package:ebook_app/features/home/presentation/views/widgets/custom_books_image.dart';
 import 'package:flutter/material.dart';
 
 class SimilarBooksListView extends StatelessWidget {
@@ -11,21 +11,9 @@ class SimilarBooksListView extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 10,
-        itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.only(right: 8),
-          child: AspectRatio(
-            aspectRatio: 3 / 4,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Colors.red,
-                image: const DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage(AssetsData.logo),
-                ),
-              ),
-            ),
-          ),
+        itemBuilder: (context, index) => const Padding(
+          padding: EdgeInsets.only(right: 8),
+          child: CustomBooksImage(),
         ),
       ),
     );

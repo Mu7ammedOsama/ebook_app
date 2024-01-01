@@ -1,5 +1,5 @@
 import 'package:ebook_app/constants.dart';
-import 'package:ebook_app/core/utilities/assets_data.dart';
+import 'package:ebook_app/features/home/presentation/views/widgets/custom_books_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -18,19 +18,7 @@ class FeaturedBooksListView extends StatelessWidget {
           padding: const EdgeInsets.only(right: 8),
           child: GestureDetector(
             onTap: () => GoRouter.of(context).push(kBookDetailsViewRoute),
-            child: AspectRatio(
-              aspectRatio: 3 / 4,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: Colors.red,
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage(AssetsData.logo),
-                  ),
-                ),
-              ),
-            ),
+            child: const CustomBooksImage(),
           ),
         ),
       ),

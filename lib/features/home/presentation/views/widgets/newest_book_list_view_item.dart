@@ -2,6 +2,7 @@ import 'package:ebook_app/constants.dart';
 import 'package:ebook_app/core/utilities/assets_data.dart';
 import 'package:ebook_app/core/utilities/styles.dart';
 import 'package:ebook_app/features/home/presentation/views/widgets/book_rating.dart';
+import 'package:ebook_app/features/home/presentation/views/widgets/custom_books_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -16,19 +17,7 @@ class NewestBookListViewItem extends StatelessWidget {
         height: 128,
         child: Row(
           children: [
-            AspectRatio(
-              aspectRatio: 3 / 4,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: Colors.red,
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage(AssetsData.logo),
-                  ),
-                ),
-              ),
-            ),
+            const CustomBooksImage(),
             const SizedBox(width: 24),
             Expanded(
               child: Column(

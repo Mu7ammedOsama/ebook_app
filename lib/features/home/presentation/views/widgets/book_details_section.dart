@@ -1,7 +1,7 @@
-import 'package:ebook_app/core/utilities/assets_data.dart';
 import 'package:ebook_app/core/utilities/styles.dart';
 import 'package:ebook_app/features/home/presentation/views/widgets/book_details_action_button.dart';
 import 'package:ebook_app/features/home/presentation/views/widgets/book_rating.dart';
+import 'package:ebook_app/features/home/presentation/views/widgets/custom_books_image.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsSection extends StatelessWidget {
@@ -15,19 +15,7 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.3),
-          child: AspectRatio(
-            aspectRatio: 3 / 4,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Colors.red,
-                image: const DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage(AssetsData.logo),
-                ),
-              ),
-            ),
-          ),
+          child: const CustomBooksImage(),
         ),
         const SizedBox(height: 40),
         Text(
