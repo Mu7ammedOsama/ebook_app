@@ -6,4 +6,5 @@ const kInitialRoute = '/';
 const kHomeRoute = '/homeView';
 const kBookDetailsViewRoute = '/bookDetailsView';
 const kSearchViewRoute = '/searchView';
-const kFeaturedBox = 'featuredBox';
+const kFeaturedBooksBox = 'featuredBooksBox';
+const kNewestBooksBox = 'newestBooksBox';

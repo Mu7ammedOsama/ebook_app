@@ -1,5 +1,7 @@
+import 'package:ebook_app/constants.dart';
 import 'package:ebook_app/core/utilities/api_service.dart';
 import 'package:ebook_app/features/home/domain/entities/book_entity.dart';
+import 'package:hive/hive.dart';
 
 abstract class HomeLocalDataSource {
   List<BookEntity> fetchFeaturedBooks();
@@ -13,8 +15,14 @@ class HomeLocalDataSourceImplementation extends HomeLocalDataSource {
   HomeLocalDataSourceImplementation(this.apiService);
 
   @override
-  Future<List<BookEntity>> fetchFeaturedBooks() async {}
+  List<BookEntity> fetchFeaturedBooks() {
+    var box = Hive.box<BookEntity>(kFeaturedBooksBox);
+    return box.values.toList();
+  }
 
   @override
-  Future<List<BookEntity>> fetchNewestBooks() async {}
+  List<BookEntity> fetchNewestBooks() {
+    var box = Hive.box<BookEntity>(kNewestBooksBox);
+    return box.values.toList();
+  }
 }
