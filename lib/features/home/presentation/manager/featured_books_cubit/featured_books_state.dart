@@ -1,4 +1,4 @@
-part of 'featured_book_cubit.dart';
+part of 'featured_books_cubit.dart';
 
 @immutable
 abstract class FeaturedBookState {}
