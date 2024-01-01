@@ -1,9 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:ebook_app/features/home/domain/entities/book_entity.dart';
 import 'package:ebook_app/features/home/domain/use_cases/fetch_featured_books_use_case.dart';
-import 'package:meta/meta.dart';
-
-part 'featured_books_state.dart';
+import 'package:ebook_app/features/home/presentation/manager/featured_books_cubit/featured_books_state.dart';
 
 class FeaturedBookCubit extends Cubit<FeaturedBookState> {
   FeaturedBookCubit(this.featuredBooksUseCase) : super(FeaturedBookInitial());

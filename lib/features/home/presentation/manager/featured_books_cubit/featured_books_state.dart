@@ -1,6 +1,5 @@
-part of 'featured_books_cubit.dart';
+import 'package:ebook_app/features/home/domain/entities/book_entity.dart';
 
-@immutable
 abstract class FeaturedBookState {}
 
 class FeaturedBookInitial extends FeaturedBookState {}

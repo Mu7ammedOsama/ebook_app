@@ -1,6 +1,5 @@
-part of 'newest_books_cubit.dart';
+import 'package:ebook_app/features/home/domain/entities/book_entity.dart';
 
-@immutable
 abstract class NewestBooksState {}
 
 class NewestBooksInitial extends NewestBooksState {}
