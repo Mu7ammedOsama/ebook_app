@@ -6,4 +6,8 @@ part 'newest_books_state.dart';
 
 class NewestBooksCubit extends Cubit<NewestBooksState> {
   NewestBooksCubit() : super(NewestBooksInitial());
+
+
+
+
 }
