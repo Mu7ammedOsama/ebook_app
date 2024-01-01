@@ -70,14 +70,34 @@
 
 import 'package:dartz/dartz.dart';
 import 'package:ebook_app/core/errors/failures.dart';
+import 'package:ebook_app/features/home/data/data_sources/home_local_data_source.dart';
+import 'package:ebook_app/features/home/data/data_sources/home_remote_data_source.dart';
 import 'package:ebook_app/features/home/domain/entities/book_entity.dart';
 import 'package:ebook_app/features/home/domain/repos/home_repo.dart';
 
 class HomeRepoImplementation extends HomeRepo {
+  final HomeRemoteDataSource homeRemoteDataSource;
+  final HomeLocalDataSource homeLocalDataSource;
+
+  HomeRepoImplementation({
+    required this.homeRemoteDataSource,
+    required this.homeLocalDataSource,
+  });
+
   @override
-  Future<Either<Failures, List<BookEntity>>> fetchFeaturedBooks() {
-    // TODO: implement fetchFeaturedBooks
-    throw UnimplementedError();
+  Future<Either<Failures, List<BookEntity>>> fetchFeaturedBooks() async {
+    try {
+      var localBooks = homeLocalDataSource.fetchFeaturedBooks();
+
+      if (localBooks.isNotEmpty) {
+        return right(localBooks);
+      }
+
+      var remoteBooks = await homeRemoteDataSource.fetchFeaturedBooks();
+      return right(remoteBooks);
+    } catch (e) {
+      return left(Failures());
+    }
   }
 
   @override
@@ -85,5 +105,4 @@ class HomeRepoImplementation extends HomeRepo {
     // TODO: implement fetchNewestBooks
     throw UnimplementedError();
   }
-
 }
