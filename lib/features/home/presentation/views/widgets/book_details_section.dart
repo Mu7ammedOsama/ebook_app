@@ -15,7 +15,7 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.3),
-          child: const CustomBooksImage(),
+          child: const CustomBooksImage(image: 'https://imgupscaler.com/images/samples/animal-after.webp'),
         ),
         const SizedBox(height: 40),
         Text(

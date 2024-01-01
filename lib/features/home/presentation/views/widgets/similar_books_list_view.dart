@@ -13,7 +13,7 @@ class SimilarBooksListView extends StatelessWidget {
         itemCount: 10,
         itemBuilder: (context, index) => const Padding(
           padding: EdgeInsets.only(right: 8),
-          child: CustomBooksImage(),
+          child: CustomBooksImage(image: 'https://imgupscaler.com/images/samples/animal-after.webp'),
         ),
       ),
     );

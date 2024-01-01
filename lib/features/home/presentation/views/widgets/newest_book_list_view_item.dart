@@ -17,7 +17,7 @@ class NewestBookListViewItem extends StatelessWidget {
         height: 128,
         child: Row(
           children: [
-            const CustomBooksImage(),
+            const CustomBooksImage(image: 'https://imgupscaler.com/images/samples/animal-after.webp'),
             const SizedBox(width: 24),
             Expanded(
               child: Column(

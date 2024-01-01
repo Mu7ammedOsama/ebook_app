@@ -1,10 +1,11 @@
-import 'package:ebook_app/constants.dart';
+import 'package:ebook_app/features/home/domain/entities/book_entity.dart';
 import 'package:ebook_app/features/home/presentation/views/widgets/custom_books_image.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
-  const FeaturedBooksListView({super.key});
+  const FeaturedBooksListView({super.key, required this.books});
+
+  final List<BookEntity> books;
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +17,7 @@ class FeaturedBooksListView extends StatelessWidget {
         itemCount: 10,
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.only(right: 8),
-          child: GestureDetector(
-            onTap: () => GoRouter.of(context).push(kBookDetailsViewRoute),
-            child: const CustomBooksImage(),
-          ),
+          child: CustomBooksImage(image: books[index].image ?? ''),
         ),
       ),
     );
